@@ -442,11 +442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jeanvisser/projects/TodoApi/TodoApi/TodoApi.csproj",
+      "projectUniqueName": "/Users/jeanvisser/projects/ToDoList/TodoApi/TodoApi/TodoApi.csproj",
       "projectName": "TodoApi",
-      "projectPath": "/Users/jeanvisser/projects/TodoApi/TodoApi/TodoApi.csproj",
+      "projectPath": "/Users/jeanvisser/projects/ToDoList/TodoApi/TodoApi/TodoApi.csproj",
       "packagesPath": "/Users/jeanvisser/.nuget/packages/",
-      "outputPath": "/Users/jeanvisser/projects/TodoApi/TodoApi/obj/",
+      "outputPath": "/Users/jeanvisser/projects/ToDoList/TodoApi/TodoApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/jeanvisser/.nuget/NuGet/NuGet.Config"

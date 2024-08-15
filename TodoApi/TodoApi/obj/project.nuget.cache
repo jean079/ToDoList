@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aNElVJUEvzXKYx9AIoTTCe5c6r1ubXaoURd1iD2BoS71BSaocQ3ws4hpTQJjixOFxPgyp21Df7BnNRer+xPphg==",
+  "dgSpecHash": "D28qxcfAlO2lW+BOz1gKCBP01c+TKnEv4GXnYTGfeGUjWobrfozxg3woG6VrYIA/RLOb60DgeaChcMG4xJ28gg==",
   "success": true,
-  "projectFilePath": "/Users/jeanvisser/projects/TodoApi/TodoApi/TodoApi.csproj",
+  "projectFilePath": "/Users/jeanvisser/projects/ToDoList/TodoApi/TodoApi/TodoApi.csproj",
   "expectedPackageFiles": [
     "/Users/jeanvisser/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/Users/jeanvisser/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
