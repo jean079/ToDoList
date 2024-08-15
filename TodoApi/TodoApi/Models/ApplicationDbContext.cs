@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 namespace TodoApi.Models
 {
@@ -13,6 +13,14 @@ namespace TodoApi.Models
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseNpgsql("Host=localhost;Database=TodoDb;Username=your_username;Password=your_password");
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
@@ -24,4 +32,3 @@ namespace TodoApi.Models
         }
     }
 }
-
