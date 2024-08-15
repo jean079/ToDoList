@@ -17,7 +17,7 @@ namespace TodoApi.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Host=localhost;Database=TodoDb;Username=your_username;Password=your_password");
+                optionsBuilder.UseNpgsql("Host=localhost;Database=TodoList;Username=docker;Password=docker");
             }
         }
 
