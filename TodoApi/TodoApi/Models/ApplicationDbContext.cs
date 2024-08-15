@@ -23,12 +23,20 @@ namespace TodoApi.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-                .HasMany(u => u.TodoItems)
-                .WithOne(t => t.User)
-                .HasForeignKey(t => t.UserId);
+            // Configure the User entity
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.Username).HasColumnType("text"); // Use 'text' for PostgreSQL
+                entity.Property(e => e.PasswordHash).HasColumnType("text"); // Use 'text' for PostgreSQL
+
+                // Define the relationship between User and TodoItems
+                entity.HasMany(u => u.TodoItems)
+                      .WithOne(t => t.User)
+                      .HasForeignKey(t => t.UserId);
+            });
 
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }
