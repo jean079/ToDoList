@@ -8,11 +8,11 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     // AppComponent,
-    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule    // <-- Add FormsModule here
+    FormsModule,    // <-- Add FormsModule here
+    LoginComponent  // <-- Move LoginComponent to imports
   ],
   providers: [],
   bootstrap: []

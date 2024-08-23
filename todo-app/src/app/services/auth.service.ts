@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,33 +8,32 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://your-api-url/api/auth'; // Replace with your API URL
+  private apiUrl = 'http://localhost:5269/api/auth'; // Replace with your API URL
+  private isAuthenticatedUser = false;
 
   constructor(private http: HttpClient, private router: Router) {}
 
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<{ token: string }>(`${this.apiUrl}/login`, { username, password })
+    return this.http.post<{ success: boolean }>(`${this.apiUrl}/login`, { username, password })
       .pipe(
         map(response => {
-          // Store the JWT token in local storage
-          localStorage.setItem('jwtToken', response.token);
-          return true;
+
+          if (response.success) {
+            this.isAuthenticatedUser = true;
+            return true;
+          } else {
+            return false;
+          }
         })
       );
   }
 
   logout(): void {
-    // Remove the JWT token from local storage
-    localStorage.removeItem('jwtToken');
+    this.isAuthenticatedUser = false;
     this.router.navigate(['/login']);
   }
 
   isAuthenticated(): boolean {
-    // Check if the JWT token is in local storage
-    return !!localStorage.getItem('jwtToken');
-  }
-
-  getToken(): string | null {
-    return localStorage.getItem('jwtToken');
+    return this.isAuthenticatedUser;
   }
 }

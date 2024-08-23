@@ -7,10 +7,12 @@ namespace TodoApi.Models
     {
         public DbSet<User> Users { get; set; }
         public DbSet<TodoItem> TodoItems { get; set; }
-
+    
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+            Users = Set<User>();
+            TodoItems = Set<TodoItem>();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

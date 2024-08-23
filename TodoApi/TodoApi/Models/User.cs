@@ -9,12 +9,12 @@ namespace TodoApi.Models
         public int Id { get; set; }
 
         [Column(TypeName = "text")] // Use 'text' for PostgreSQL
-        public string Username { get; set; }
+        public string Username { get; set; } = string.Empty;
 
         [Column(TypeName = "text")] // Use 'text' for PostgreSQL
-        public string PasswordHash { get; set; }
+        public string PasswordHash { get; set; } =string.Empty;
 
-        public ICollection<TodoItem> TodoItems { get; set; }
+        public ICollection<TodoItem>? TodoItems { get; set; }
     }
 }
 
