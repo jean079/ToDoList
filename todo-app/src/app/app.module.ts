@@ -1,17 +1,20 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
+
+import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
-    // your components here
+    // AppComponent,
+    LoginComponent,
   ],
   imports: [
-    HttpClientModule,
-    // other modules here
+    BrowserModule,
+    FormsModule    // <-- Add FormsModule here
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
-  ],
-  bootstrap: [/* your main component */]
+  providers: [],
+  bootstrap: []
 })
 export class AppModule { }
